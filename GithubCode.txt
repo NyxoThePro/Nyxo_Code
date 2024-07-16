@@ -1,0 +1,17 @@
+local Door = workspace.Screwdriver4Door
+local CaveDoorMoves = workspace.CaveDoorMoves
+
+game.Players.PlayerAdded:Connect(function(p)
+	p.Chatted:Connect(function(chat)
+		if chat == "/e C4v3DoorCode" then
+			Door.CanCollide = false
+			Door.Transparency = 1
+			CaveDoorMoves.Playing = true
+			
+			wait(5)
+			Door.CanCollide = true
+			Door.Transparency = 0
+			CaveDoorMoves.Playing = true
+		end
+	end)
+end)
